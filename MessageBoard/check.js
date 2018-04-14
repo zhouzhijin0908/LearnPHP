@@ -3,10 +3,10 @@ function checkInput(){
 	var name = document.getElementById('name');
 	var post = document.getElementById('post');
 	//验证用户名：不能超过10个字符（5个汉字），不能输入非法字符，不能为空
-	nameValue = name.value.replace(/\s+/g,"");
+	var nameValue = name.value.replace(/\s+/g,"");
 	var SPECIAL_STR = "~!%^&*();\"?><[]{}\\|,:/=+—";
 	var nameflag=true;
-	for(i=0;i<nameValue.lenght;i++){
+	for(var i=0;i<nameValue.length;i++){
 		if (SPECIAL_STR.indexOf(nameValue.charAt(i)) !=-1)
 		nameflag=false;
 	}

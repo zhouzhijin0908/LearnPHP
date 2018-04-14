@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
+    <form name="send" method="post" action="register.php" onsubmit="return check()">
+        <table width="330" border="0" align="center" cellpadding="5" bgcolor="#f5f5dc">
+            <font color="red">*</font>为必填项
+            <tr>
+                <td width="30%">用户名：</td>
+                <td>
+                    <input name="username" type="text" id="username"><font color="red">*</font>
+                </td>
+            </tr>
+            <tr>
+                <td width="30%">密码：</td>
+                <td>
+                    <input name="password" type="password" id="password"><font color="red">*</font>
+                </td>
+            </tr>
+            <tr>
+                <td width="30%">重复密码：</td>
+                <td>
+                    <input name="cpassword" type="password" id="cpassword"><font color="red">*</font>
+                </td>
+            </tr>
+            <tr>
+                <td width="30%">Email：</td>
+                <td>
+                    <input name="email" type="text" id="email"><font color="red">*</font>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" name="Submit" value="提交">
+                    <input type="reset" name="reset" value="重置">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+    <script language="JavaScript">
+        function check() {
+            if (document.send.username.value == ""){
+                window.alert('请输入用户名');
+                return false;
+            }
+
+            if (document.send.username.value < 2){
+                window.alert('用户名长度必须大于2!');
+                return false;
+            }
+
+            if (document.send.password.value == ""){
+                window.alert('请输入密码');
+                return false;
+            }
+
+            if (document.send.password.value.length < 6){
+                window.alert('密码长度必须大于6');
+                return false;
+            }
+
+            if (document.send.password.value != document.send.cpassword.value){
+                window.alert('两次输入的密码不一致');
+                return false;
+            }
+
+            if (document.send.email.value == ""){
+                window.alert('请输入邮箱地址');
+                return false;
+            }
+
+            if (document.send.email.value.indexOf("@") == -1){
+                alert('请输入有效的Email地址');
+                return false;
+            }
+
+            return true;
+
+        }
+
+    </script>
+</body>
+</html>
