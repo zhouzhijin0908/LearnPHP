@@ -1,4 +1,4 @@
-﻿<script language="JavaScript">
+﻿
 function checkInput(){
 	var name = document.getElementById('name');
 	var post = document.getElementById('post');
@@ -32,4 +32,3 @@ function checkInput(){
 		return false;			
 	}
 }
-</script>

@@ -69,9 +69,32 @@ class Student{
 date_default_timezone_set("PRC");
 
 echo date("Y:m:d:H;i;s");
+echo "<br>";
 
 
-
+$conn = mysql_connect("localhost:3309", "root", "root");
+if ($conn){
+    echo "ok";
+}else{
+    echo "failed";
+}
+mysql_select_db("db_shop");
+$query = "select * from tb_shangpin";
+@mysql_query("SET NAMES 'utf8'", $conn);
+$result = mysql_query($query, $conn);
+if ($result){
+    echo "查询成功";
+    echo "<br>";
+    $rows = mysql_num_rows($result);
+    if ($rows != 0){
+        while ($dataRow = mysql_fetch_array($result)){
+            echo $dataRow["dengji"];
+            echo "<br>";
+        }
+    }
+}else{
+    echo "查询失败";
+}
 
 
 
