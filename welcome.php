@@ -6,5 +6,7 @@
  * Time: 14:46
  */
 
-echo "欢迎".$_POST["fname"]."!<br/>";
-echo "你的年龄是".$_POST["age"]."岁";
+$username = 'zhou';
+$err = 'failed login';
+
+echo "<font size='19' color='red'>用户：$username -- $err</font>";
