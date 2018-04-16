@@ -26,7 +26,7 @@ if (empty($username) || empty($email) || empty($password) || $cpassword != $pass
         exit();
     }
 
-    $db = mysql_connect('localhost:3309', 'root', 'root') or die('could not connect db!');
+    $db = mysql_connect('104.194.90.89:3306', 'root', 'root') or die('could not connect db!');
     mysql_select_db('register') or die('could not select database');
     $sql = "select * from user where username = '".$username."'";
     $result = mysql_query($sql);
