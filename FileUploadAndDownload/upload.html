@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+    <script language="JavaScript" type="text/javascript">
+        function getFileSize(filename) {
+
+            alert (filename);
+            if(filename =='')
+            {
+                alert("你还没有浏览要上传的文件");
+                return false;
+            }
+
+            // try {
+            //     var fso,f,fname,fsize;
+            //     //设置上传的文件最大值（单位：kb），超过此值则不上传。
+            //     var flength=1024;
+            //     var fso=new ActiveXObject("Scripting.FileSystemObject");
+            //     f=fso.GetFile(filename);//文件的物理路径
+            //     fname=fso.GetFileName(filename);//文件名（包括扩展名）
+            //     fsize=f.Size; //文件大小（bit）
+            //     fsize=fsize/1024;
+            //
+            //     if(fsize>flength)
+            //     {
+            //         alert("上传的文件到小为："+fsize+"kb,\n超过最大限度"+flength+"kb,不允许上传 ");
+            //         return false;
+            //     }else{
+            //         alert("允许上传，文件大小为："+fsize+"kb");}
+            // }
+            // catch(e)
+            // {
+            //     alert(e+"\n 跳出此消息框，是由于你的activex控件没有设置好,\n"+
+            //         "你可以在浏览器菜单栏上依次选择\n"+
+            //         "工具->internet选项->\"安全\"选项卡->自定义级别,\n"+
+            //         "打开\"安全设置\"对话框，把\"对没有标记为安全的\n"+
+            //         "ActiveX控件进行初始化和脚本运行\"，改为\"启动\"即可");
+            //     return false;
+            // }
+
+            return true;
+        }
+
+    </script>
+
+</head>
+<body bgcolor="#FFFFFF">
+<center>
+    <form enctype="multipart/form-data" method="post" action="upload.php">
+        <table border="1" width="55%" id="table1" cellspacing="0">
+            <tr>
+                <td colspan="2">
+                    <p align="center">上传文件:
+                </td>
+            </tr>
+            <tr>
+                <td width="10%"></td>
+                <td width="71%">
+                    <input name="userfile" type="file">
+                    <input type="submit" value="上传文件" onclick="getFileSize(document.all('userfile').value)">
+                </td>
+            </tr>
+        </table>
+        允许上传的文件类型为:jpg|jpeg|gif|bmp|png|swf|mp3|wma|zip|rar|doc
+    </form>
+</center>
+</body>
+</html>
