@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>我的充值记录</title>
+    <meta name="keywords" content="我的充值记录" />
+    <meta name="description" content="我的充值记录！" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="Housecenter">
+    <div id="HouseGiveto">
+        <div class="Waretop">
+            <span><img src="img/wptopr.gif" /></span>
+            <img src="img/wptopl.gif" />
+        </div>
+        <div class="Waretopd">
+            <div class="Waretopdw">我要充值-我的充值记录</div>
+        </div>
+        <div class="Warecnt HouseGiveIn">
+            <div class="shopLeftlistz Business">
+                <ul>
+                    <li class="shopLeftcolor">
+                        <span>订单号</span>
+                        <span>交易日期</span>
+                        <span>消费额</span>
+                        <span>订单明细</span>
+                        <span>订单状态</span>
+                    </li>
+                    {|section name=Inquiry loop=$Inquiry|}
+                    <li>
+                        <span>{|$Inquiry[Inquiry].id|}</span>
+                        <span>{|$Inquiry[Inquiry].createtime|}</span>
+                        <span>{|$Inquiry[Inquiry].score|} 金粉笔</span>
+                        {|if $Inquiry[Inquiry].status=='失败'|}
+                        <span><a href="detail.php?cid={|$Inquiry[Inquiry].id|}">点此查看</a></span>
+                        {|else|}
+                        <span>支付成功</span>
+                        {|/if|}
+                        <span class="Leftlistz">[{|$Inquiry[Inquiry].status|}]</span>
+                    </li>
+                    {|/section|}
+                </ul>
+            </div>
+            <form action="value_record.php?uid={|$uid|}&page={|$page|}" method="get">
+                <div id="footer">
+                    输入页数 <INPUT onchange="" size=3 ame=pageno id ="page" name="page">
+                    第{|$divpage.currpage|}页, 共 {|$sum|} 页
+                    | <A href="value_record.php?uid={|$uid|}&page={|$divpage.firstpage|}" target=_self>首页</A>
+                    | <a href="value_record.php?uid={|$uid|}&page={|$divpage.prepage|}">上一页</a>
+                    | <A href="value_record.php?uid={|$uid|}&page={|$divpage.nextpage|}" target=_self>下一页</A>
+                    | <A href="value_record.php?uid={|$uid|}&page={|$divpage.max_page|}" target=_self>尾页</A>
+                </div>
+            </form>
+            <div class="RushvalueNote">
+                <a href="pay.php">
+                    <img src="img/housecz.gif" border="0" />
+                </a>
+                <a href="Exchange.php" target="_blank"><img src="img/houseczb.gif" border="0" /></a>
+            </div>
+            <div class="LeftAsse">
+                <div class="LeftAssetop">
+                    <span><img src="img/glR.gif" /></span>
+                    <img src="img/glL.gif" width="34" height="24" />
+                </div>
+                <div class="LeftAssecnt">
+                    <div class="HouseAsseText">
+                        <div class="HouseAsseBack">
+                            <blockquote>
+                                <p><span class="HouseSmall">一元人民币= <img src="img/wpfbj.gif" width="5" height="14" /> 1<a href="#">金</a>粉笔</span>温馨提示：</p>
+                                <p><span class="HouseBig">1个<a href="#">金</a>粉笔= <img src="img/wpfb.gif" width="5" height="14" /> 100个白粉笔</span>此行为单向不可逆。</p>
+                            </blockquote>
+                        </div>
+                        <div class="HouseAsseFall">
+                            <input type="submit" name="Submit" value="【区别是？】" class="SuccesB" />
+                            　
+                            <input type="submit" name="Submit2" value="【如何赚取？】" class="SuccesB" />
+                        </div>
+                        <div class="HouseAsseFallz"></div>
+
+                    </div>
+                </div>
+                <div class="LeftAssebottom">
+                    <span><img src="img/glbR.gif" /></span>
+                    <img src="img/glbL.gif" width="56" height="11" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
