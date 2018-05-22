@@ -334,7 +334,7 @@ function createhashkey($len=6)
     $hashkey = "";
     for ($i=0; $i< $len; $i++)
     {
-        $number = rand(0,32);
+        $number = rand(0,array_count_values($chararray));
         $hashkey .= $chararray[$number];
     }
 
